@@ -1,0 +1,31 @@
+<script>
+	var right_answers = [];
+	var wrong_answers = [];
+	
+	for(i=0; i < 12; i++){
+		var first_n =Math.floor(Math.random()*90)+10;
+		var second_n =Math.floor(Math.random()*90)+10;
+		
+		var right_sum = first_n * second_n;
+		var user_answer = +prompt(`${first_n} * ${second_n} =`);
+		 
+			 if(user_answer==right_sum){
+				right_answers.push([`${first_n} * ${second_n} =`, user_answer]);
+			 }else{
+				wrong_answers.push([`${first_n} * ${second_n} =`, user_answer, right_sum]);
+			}
+			}
+			
+			 console.log("Your right answers:");
+			 for(var i = 0; i < right_answers.length; i++){
+			 console.log(right_answers[i][0], right_answers[i][1]);
+			 }
+			
+			 console.log("Your wrong answers:");
+			 for(var i = 0; i < wrong_answers.length; i++) {
+			 console.log(wrong_answers[i][0], "Your answer:", wrong_answers[i][1], "Right answer:", wrong_answers[i][2]);
+			 }
+			 
+			 console.log("Number of mistake:", wrong_answers.length);
+			 console.log("Your mark:", right_answers.length);
+</script>
